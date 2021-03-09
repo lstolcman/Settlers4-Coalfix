@@ -2,7 +2,7 @@ name: Build
 on: push
 
 jobs:
-  build-frontend:
+  build-asi:
     # https://github.com/actions/virtual-environments#available-environments
     runs-on: windows-latest
     steps:
@@ -24,4 +24,6 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: build
-        path: ./
+        path: |
+          Debug/
+          Release/
