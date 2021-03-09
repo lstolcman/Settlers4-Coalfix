@@ -4,9 +4,14 @@ on: push
 jobs:
   build-frontend:
     # https://github.com/actions/virtual-environments#available-environments
-    runs-on: windows-2016
+    runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
+    - name: Add msbuild to PATH
+      uses: microsoft/setup-msbuild@v1.0.2
+      # with:
+      #   vs-version: '[16.4,16.5)'
+
     - name: Build
       run: |
         msbuild Settlers4-CoalFix.sln
