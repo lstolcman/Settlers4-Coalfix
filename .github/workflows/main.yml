@@ -12,16 +12,13 @@ jobs:
       # with:
       #   vs-version: '[16.4,16.5)'
 
-    - name: Build debug
+    - name: Build
       run: |
         msbuild Settlers4-CoalFix.sln /property:Configuration=Debug
-
-    - name: Build release
-      run: |
         msbuild Settlers4-CoalFix.sln /property:Configuration=Release
 
     - name: Upload build as artifact
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v2
       with:
         name: build
         path: |
