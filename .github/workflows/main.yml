@@ -1,0 +1,12 @@
+name: Build
+on: push
+
+jobs:
+  build-frontend:
+    # https://github.com/actions/virtual-environments#available-environments
+    runs-on: windows-2016
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build
+      run: |
+        msbuild Settlers4-CoalFix.sln
